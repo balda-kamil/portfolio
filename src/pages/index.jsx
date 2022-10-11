@@ -4,7 +4,6 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { TwitterIcon, GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import image1 from '@/images/photos/image-1.jpg'
@@ -16,10 +15,6 @@ import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoStarbucks from '@/images/logos/starbucks.svg'
-import { generateRssFeed } from '@/lib/generateRssFeed'
-import { getAllArticles } from '@/lib/getAllArticles'
-import { formatDate } from '@/lib/formatDate'
-import pageConfig from 'config'
 
 function MailIcon(props) {
   return (
@@ -77,21 +72,6 @@ function ArrowDownIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
-}
-
-function Article({ article }) {
-  return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
-    </Card>
   )
 }
 
@@ -242,7 +222,7 @@ function Photos() {
   )
 }
 
-export default function Home({ articles }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -282,36 +262,6 @@ export default function Home({ articles }) {
           </div>
         </div>
       </Container>
-      {!pageConfig.photos.hidePhotos && <Photos />}
-      {!pageConfig.articles.hideArticles && (
-        <Container className="mt-24 md:mt-28">
-          <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-            <div className="flex flex-col gap-16">
-              {articles.map((article) => (
-                <Article key={article.slug} article={article} />
-              ))}
-            </div>
-            <div className="space-y-10 lg:pl-16 xl:pl-24">
-              <Newsletter />
-              <Resume />
-            </div>
-          </div>
-        </Container>
-      )}
     </>
   )
-}
-
-export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
-  }
-
-  return {
-    props: {
-      articles: (await getAllArticles())
-        .slice(0, 4)
-        .map(({ component, ...meta }) => meta),
-    },
-  }
 }
