@@ -41,34 +41,34 @@ export default function Uses() {
       >
         <div className="space-y-20">
           <ToolsSection title="Workstation">
-            <Tool title="13.3” MacBook Pro i5 2,3GHz 16GB RAM, 256GB (2018)">
+            <Tool title="13.3” MacBook Pro i5 2,3GHz 16GB RAM, 256GB (2018) 💻">
               This laptop has everything that I want. Long battery life, high
               performance. It is incredibly slim and light as a feather. Always
               ready to work. This is my first MacBook but for sure not last one. 
             </Tool>
-            <Tool title="LG 34UM88C-P">
+            <Tool title="LG 34UM88C-P 🖥">
               Ultra-wide 34` LG monitor, 3440 x 1440 (UWQHD), LED/IPS. For me,
               one big monitor is better than two smaller ones.
             </Tool>
-            <Tool title="Logitech MX Mechanical Mini">
+            <Tool title="Logitech MX Mechanical Mini ⌨">
               Logitech making the best keyboards on the market. This mechanical
               keyboard is very comfortable and compact. It allows you to connect
               up to 3 devices, in my job it is very important because currently
               I have 3 machines, all with different OS (Mac, Linux and Windows).
             </Tool>
-            <Tool title="Logitech MX Master 2S">
+            <Tool title="Logitech MX Master 2S 🖱">
               Very good and comfortable mouse, also it allows to connect up to 3
               devices.
             </Tool>
-            <Tool title="Ikea Marcus Chair">
+            <Tool title="Ikea Marcus Chair 🪑">
               I`m going to change it in some time.. 😅
             </Tool>
-            <Tool title="Desk with height regulation">
+            <Tool title="Desk with height regulation ⚙️">
               It is very important to stand up while coding. Now I can`t imagine
               working for 12 hours and just sitting as I did before. In the past
               my legs were alwayes tired and sore.{' '}
             </Tool>
-            <Tool title="Edifier R1855DB 2.0 speakers">
+            <Tool title="Edifier R1855DB 2.0 speakers 🎶">
               Good quality versus price.
             </Tool>
           </ToolsSection>
