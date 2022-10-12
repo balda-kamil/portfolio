@@ -61,7 +61,7 @@ export default function Home() {
             I’m focused on JAM Stack, JavaScript technologies. Big fan of Apple 🍎 products. 💻 📱
           </p>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">You can contact me writing here: 
-          <a href="mailto:baldakamil@gmail.com"> baldakamil@gmail.com ✉️</a>
+          <a href="mailto:baldakamil@gmail.com?subject=Hey Kamil!"> baldakamil@gmail.com ✉️</a>
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
